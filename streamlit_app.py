@@ -1,8 +1,11 @@
 from operator import index
 import streamlit
 import pandas
-fruit_list_remote = """https://uni-lab-files.s3.us-west-2.amazonaws.com
-/dabw/fruit_macros.txt"""
+FILENAME = "fruit_macros.txt"
+LOCATION = "us-west-2"
+DOMAIN = "uni-lab-files"
+CLOUD = "amazonaws"
+fruit_list_url = """https://{DOMAIN}.s3.{LOCATION}.{CLOUD}.com/dabw/{FILENAME}"""
 
 streamlit.title('My Parents new Healthy Diner')
 streamlit.header('breakfast Menu')
@@ -15,4 +18,4 @@ my_fruit_list = (pandas.read_csv(fruit_list_remote)
                  .set_index("Fruit")
                  )
 streamlit.multiselect("Pick some fruits:", list(my_fruit_list.index))
-streamlit.dataframe(my_fruit_list)
+streamlit.dataframe(fruit_list_url)
