@@ -5,7 +5,7 @@ FILENAME = "fruit_macros.txt"
 LOCATION = "us-west-2"
 DOMAIN = "uni-lab-files"
 CLOUD = "amazonaws"
-fruit_list_url = """https://{DOMAIN}.s3.{LOCATION}.{CLOUD}.com/dabw/{FILENAME}"""
+fruit_list_url = f"""https://{DOMAIN}.s3.{LOCATION}.{CLOUD}.com/dabw/{FILENAME}"""
 
 streamlit.title('My Parents new Healthy Diner')
 streamlit.header('breakfast Menu')
